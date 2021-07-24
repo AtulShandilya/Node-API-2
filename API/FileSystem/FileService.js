@@ -34,7 +34,7 @@ const writeFile=(fileName,dirName,fileObj)=>{
         filePath=(path.join(__dirname,'file',fileName))
     }else {
         filePath=(path.join(__dirname,'file',dirName,fileName))
-        console.log("filepath:",filePath)
+        //console.log("filepath:",filePath)
     }
     if(fileName==''){
         return ["File Name is Incorrect!!",1]

@@ -18,26 +18,26 @@ const verifyLogin=(fileName,dirName,userName,password)=>{
     }else{
         try{
             const fileBuffer=fs.readFileSync(filePath);
-            console.log("login details",fileBuffer)
+            //console.log("login details",fileBuffer)
             let jsonObj=JSON.parse(JSON.parse(fileBuffer));
-            console.log("file text:",jsonObj)
-            console.log("user:",jsonObj["userName"],"pass:",jsonObj.password)
+            //console.log("file text:",jsonObj)
+            //console.log("user:",jsonObj["userName"],"pass:",jsonObj.password)
             if (jsonObj.userName==userName&&jsonObj.password==password){
                 if (userName.toUpperCase() =='ADMIN' ) {jsonObj.isAdmin=true}
                 jsonObj.isLogin=true;
-                console.log("Login Success")
-                console.log("file buffer:",fileBuffer)
+                //console.log("Login Success")
+                //console.log("file buffer:",fileBuffer)
                 rtn = '{"returnCode":0,"returnObj":'+fileBuffer.toString()+'}'
-                console.log("return:",rtn)
+                //console.log("return:",rtn)
                 return rtn
             }else {
                 rtn='{"returnCode":1,"returnObj":"username and password combination do not match"}'
-                console.log("return:",rtn)
+                //console.log("return:",rtn)
                 return rtn
             }
         } catch(err){
             rtn = '{"returnCode":2,"returnObj":"User is not registered!"}'
-            console.log("return:",rtn)
+            //console.log("return:",rtn)
             return rtn
         }
     }

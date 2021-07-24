@@ -32,7 +32,7 @@ app.get('/fileService',(req,res)=>{
     // console.log("Operation:",req.query.operation,':','read',':')
 
     if(req.query.operation==='read'){
-        console.log("read file:",req.query.filename);
+        //console.log("read file:",req.query.filename);
         res.send(fo.readFile(req.query.filename,req.query.dir));
     }else
         if (req.query.operation==='write'){
@@ -47,12 +47,12 @@ app.get('/fileService',(req,res)=>{
 //*************************************************************************************************
 app.post('/fileService',urlencodedParser,(req,res)=>{
     if(req.query.operation==='read'){
-        console.log("read file:",req.query.filename);
+        //console.log("read file:",req.query.filename);
         res.send(fo.readFile(req.query.filename,req.query.dir));
     }else
     if (req.query.operation==='write'){
-        console.log("write file:",req.query.filename);
-        console.log("body:",req.body)
+        //console.log("write file:",req.query.filename);
+        //console.log("body:",req.body)
         res.send(fo.writeFile(req.query.filename,req.query.dir,req.body))
     }else{
         console.log("Wrong Operation")
